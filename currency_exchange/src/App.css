@@ -1,0 +1,103 @@
+body {
+  font-size: 100%;
+  font-family: sans-serif;
+  background-image: url('https://tapetujemy.pl/environment/cache/images/630_630_productGfx_123162/5d00862821eb41d9c19aa97c79e18e2b.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.info {
+  margin: 5% 25% 0 25%;
+  text-align: center;
+}
+
+h3:hover{
+  color:green
+}
+
+text:hover{
+  font-weight: bold;
+}
+
+.form-group {
+  background-image: url('https://tapetujemy.pl/environment/cache/images/630_630_productGfx_123162/5d00862821eb41d9c19aa97c79e18e2b.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  position: relative;
+  font-size: 1em;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input {
+  background-color: rgb(250, 241, 230);
+  height: 3vh;
+  width: 80%;
+  padding: 3% 0 3% 20%;
+  border: none;
+  border-radius: 3px;
+  font-size: 2vh;
+  color: #333;
+}
+
+.form-group .flag-icon {
+  width: 8%;
+  margin-right: 10px;
+}
+.form-group .flag-icon:hover{
+  opacity: 0.7;
+}
+span:hover{
+  font-weight: bold;
+}
+#uk {
+  position: absolute;
+  left: 3vw;
+  top: 27%;
+  transform: translateY(-50%);
+}
+
+#pl {
+  position: absolute;
+  left: 3vw;
+  top: 79%;
+  transform: translateY(-50%);
+}
+
+span {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2vh;
+  color: #333;
+}
+
+#first {
+  top: 27%;
+}
+
+#second {
+  top: 79%;
+}
+
+@media screen and (max-width: 768px) {
+  .form-group {
+    width: 70%;
+    margin: 5% 15% 0 15%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .form-group {
+    width: 80%;
+    margin: 5% 10% 0 10%;
+  }
+}
+
+
