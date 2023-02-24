@@ -1,11 +1,12 @@
 import React, {useState } from "react";
 import './App.css';
 
+let check = -1;
 function App() {
-  const [GBPValue, setGBPValue] = useState(0);
+  let [GBPValue, setGBPValue] = useState(0);
+  let [zlotyValue, setZlotyValue] = useState(0);
   const [rate, setRate] = useState(0);
   const url = "http://api.nbp.pl/api/exchangerates/rates/a/gbp/?format=json";
-
   const fetchData = async () => {
     try {
       const response = await fetch(url);
@@ -19,10 +20,24 @@ function App() {
 
   const handleGBPChange = (event) => {
     setGBPValue(event.target.value);
+    check = 0;
   };
 
+  const handleZlotyChange = (event) => {
+    setZlotyValue(event.target.value);
+    check = 1;
+  }
+
   fetchData();
-  const zlotyValue=(GBPValue*rate.toFixed(2)).toFixed(2);
+  if (check == 0){
+    zlotyValue=(GBPValue*rate.toFixed(2)).toFixed(2);
+  }
+  if (check == 1){
+    GBPValue=(zlotyValue/rate.toFixed(2)).toFixed(2);
+  }
+
+
+  
 
   return (
     <><div className="form-group">
@@ -39,7 +54,7 @@ function App() {
       <label>
         They receive
         <img src="https://www.flagcolorcodes.com/images/webp/poland.webp" alt="Poland flag" className="flag-icon" id="pl" />
-        <input type="text" value={zlotyValue} readOnly />
+        <input type="text" value={zlotyValue} onChange={handleZlotyChange} />
         <span id="second">
           PLN
         </span>
