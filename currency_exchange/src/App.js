@@ -45,7 +45,7 @@ function App() {
         You send
         <br />
         <img src="https://www.flagcolorcodes.com/data/Flag-of-United-Kingdom.png" alt="UK flag" className="flag-icon" id="uk" />
-        <input type="text" value={GBPValue} onChange={handleGBPChange} />
+        <input type="text" value={GBPValue} onChange={handleGBPChange} id="gbp" />
         <span id="first">
           GBP
         </span>
@@ -54,7 +54,7 @@ function App() {
       <label>
         They receive
         <img src="https://www.flagcolorcodes.com/images/webp/poland.webp" alt="Poland flag" className="flag-icon" id="pl" />
-        <input type="text" value={zlotyValue} onChange={handleZlotyChange} />
+        <input type="text" value={zlotyValue} onChange={handleZlotyChange} id="pln"/>
         <span id="second">
           PLN
         </span>

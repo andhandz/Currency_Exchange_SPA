@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches snapshot 1`] = `
+Array [
+  <div
+    className="form-group"
+  >
+    <label>
+      You send
+      <br />
+      <img
+        alt="UK flag"
+        className="flag-icon"
+        id="uk"
+        src="https://www.flagcolorcodes.com/data/Flag-of-United-Kingdom.png"
+      />
+      <input
+        id="gbp"
+        onChange={[Function]}
+        type="text"
+        value={0}
+      />
+      <span
+        id="first"
+      >
+        GBP
+      </span>
+    </label>
+    <br />
+    <label>
+      They receive
+      <img
+        alt="Poland flag"
+        className="flag-icon"
+        id="pl"
+        src="https://www.flagcolorcodes.com/images/webp/poland.webp"
+      />
+      <input
+        id="pln"
+        onChange={[Function]}
+        type="text"
+        value={0}
+      />
+      <span
+        id="second"
+      >
+        PLN
+      </span>
+    </label>
+  </div>,
+  <div
+    className="info"
+  >
+    <text>
+      1 GBP = 
+      0.00
+       PLN
+    </text>
+    <br />
+    <h3>
+      No transfer fee
+    </h3>
+  </div>,
+]
+`;
