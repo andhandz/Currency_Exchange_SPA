@@ -1,7 +1,7 @@
 body {
   font-size: 100%;
   font-family: sans-serif;
-  background-image: url('https://tapetujemy.pl/environment/cache/images/630_630_productGfx_123162/5d00862821eb41d9c19aa97c79e18e2b.jpg');
+  background-image: url('../assets/background.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -20,7 +20,7 @@ text:hover{
 }
 
 .form-group {
-  background-image: url('https://tapetujemy.pl/environment/cache/images/630_630_productGfx_123162/5d00862821eb41d9c19aa97c79e18e2b.jpg');
+  background-image: url('../assets/background.jpg');
   background-size: cover;
   background-position: center;
   margin-top: 5%;
