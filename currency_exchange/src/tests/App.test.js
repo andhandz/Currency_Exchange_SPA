@@ -46,7 +46,7 @@ describe("App", () => {
     });
   });
 
-  it("updates GBPValue when ZlotyValue changes", async () => {
+  it("updates GBPValue when PLNValue changes", async () => {
     let expectedValue = (100.0 / rate.toFixed(2)).toFixed(2).toString();
     const component = renderer.create(<App />);
     const PLNInput = component.root.findByProps({ id: "pln" });
@@ -57,7 +57,7 @@ describe("App", () => {
     });
   });
 
-  it("updates ZlotyValue when GBPValue changes", async () => {
+  it("updates PLNValue when GBPValue changes", async () => {
     let expectedValue = (10.0 * rate.toFixed(2)).toFixed(2).toString();
     const component = renderer.create(<App />);
     const GBPInput = component.root.findByProps({ id: "gbp" });

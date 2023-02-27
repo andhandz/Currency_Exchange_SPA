@@ -3,22 +3,25 @@ import "./ExchangeInterface.css";
 import ukImage from "../assets/uk.png";
 import polandImage from "../assets/poland.webp";
 import { fetchExchangeRate } from "../config/DataProvider";
+import { useTranslation } from 'react-i18next';
+
 
 export const ExchangeInterface = () => {
+  const { t } = useTranslation();
   const [GBPValue, setGBPValue] = useState(0);
-  const [zlotyValue, setZlotyValue] = useState(0);
+  const [PLNValue, setPLNValue] = useState(0);
   const [rate, setRate] = useState(0);
 
   const handleGBPChange = (event) => {
     if (event.target.value !== undefined) {
       setGBPValue(event.target.value);
-      setZlotyValue((event.target.value * rate.toFixed(2)).toFixed(2));
+      setPLNValue((event.target.value * rate.toFixed(2)).toFixed(2));
     }
   };
 
-  const handleZlotyChange = (event) => {
+  const handlePLNChange = (event) => {
     if (event.target.value !== undefined) {
-      setZlotyValue(event.target.value);
+      setPLNValue(event.target.value);
       setGBPValue((event.target.value / rate.toFixed(2)).toFixed(2));
     }
   };
@@ -35,7 +38,7 @@ export const ExchangeInterface = () => {
     <>
       <div className="form-group">
         <label>
-          You send
+          {t('texts.send')}
           <br />
           <img src={ukImage} alt="UK flag" className="flag-icon" id="uk" />
           <input
@@ -44,11 +47,11 @@ export const ExchangeInterface = () => {
             onChange={handleGBPChange}
             id="gbp"
           />
-          <span id="first">GBP</span>
+          <span id="first">{t('texts.gbp')}</span>
         </label>
         <br />
         <label>
-          They receive
+        {t('texts.receive')}
           <img
             src={polandImage}
             alt="Poland flag"
@@ -57,17 +60,17 @@ export const ExchangeInterface = () => {
           />
           <input
             type="text"
-            value={zlotyValue}
-            onChange={handleZlotyChange}
+            value={PLNValue}
+            onChange={handlePLNChange}
             id="pln"
           />
-          <span id="second">PLN</span>
+          <span id="second">{t('texts.pln')}</span>
         </label>
       </div>
       <div className="info">
-        <text>1 GBP = {rate.toFixed(2)} PLN</text>
+        <text>{t('texts.equal')} {rate.toFixed(2)} {t('texts.pln')}</text>
         <br />
-        <h3>No transfer fee</h3>
+        <h3>{t('texts.fee')}</h3>
       </div>
     </>
   );

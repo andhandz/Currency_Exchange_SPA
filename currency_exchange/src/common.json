@@ -1,0 +1,10 @@
+{
+  "texts": {
+    "receive": "They receive",
+    "send": "You send",
+    "pln": "PLN",
+    "gbp": "GBP",
+    "equal": "1 GBP = ",
+    "fee": "No transfer fee"
+  }
+}
