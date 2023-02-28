@@ -3,19 +3,22 @@ import "./ExchangeInterface.css";
 import ukImage from "../assets/uk.png";
 import polandImage from "../assets/poland.webp";
 import { fetchExchangeRate } from "../config/DataProvider";
-import { useTranslation } from 'react-i18next';
-
+import information from "../assets/information.json";
 
 export const ExchangeInterface = () => {
-  const { t } = useTranslation();
+  const texts = information.texts;
   const [GBPValue, setGBPValue] = useState(0);
   const [PLNValue, setPLNValue] = useState(0);
   const [rate, setRate] = useState(0);
+  const [sendText, setSendText] = useState(texts.send);
+  const [receiveText, setReceiveText] = useState(texts.receive);
+  const [activeInput, setActiveInput] = useState("GBP");
 
   const handleGBPChange = (event) => {
     if (event.target.value !== undefined) {
       setGBPValue(event.target.value);
       setPLNValue((event.target.value * rate.toFixed(2)).toFixed(2));
+      setActiveInput("GBP");
     }
   };
 
@@ -23,6 +26,7 @@ export const ExchangeInterface = () => {
     if (event.target.value !== undefined) {
       setPLNValue(event.target.value);
       setGBPValue((event.target.value / rate.toFixed(2)).toFixed(2));
+      setActiveInput("PLN");
     }
   };
 
@@ -34,11 +38,21 @@ export const ExchangeInterface = () => {
     fetchRate();
   }, []);
 
+  useEffect(() => {
+    if (activeInput === "GBP") {
+      setSendText(texts.send);
+      setReceiveText(texts.receive);
+    } else {
+      setSendText(texts.receive);
+      setReceiveText(texts.send);
+    }
+  });
+
   return (
     <>
       <div className="form-group">
         <label>
-          {t('texts.send')}
+          {sendText}
           <br />
           <img src={ukImage} alt="UK flag" className="flag-icon" id="uk" />
           <input
@@ -47,11 +61,11 @@ export const ExchangeInterface = () => {
             onChange={handleGBPChange}
             id="gbp"
           />
-          <span id="first">{t('texts.gbp')}</span>
+          <span id="first">{texts.gbp}</span>
         </label>
         <br />
         <label>
-        {t('texts.receive')}
+          {receiveText}
           <img
             src={polandImage}
             alt="Poland flag"
@@ -64,13 +78,15 @@ export const ExchangeInterface = () => {
             onChange={handlePLNChange}
             id="pln"
           />
-          <span id="second">{t('texts.pln')}</span>
+          <span id="second">{texts.pln}</span>
         </label>
       </div>
       <div className="info">
-        <text>{t('texts.equal')} {rate.toFixed(2)} {t('texts.pln')}</text>
+        <text>
+          {texts.equal} {rate.toFixed(2)} {texts.pln}
+        </text>
         <br />
-        <h3>{t('texts.fee')}</h3>
+        <h3>{texts.fee}</h3>
       </div>
     </>
   );
