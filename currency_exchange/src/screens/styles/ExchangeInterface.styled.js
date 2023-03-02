@@ -1,15 +1,15 @@
-import styled from 'styled-components';
-import img from '../../assets/background.jpg';
+import styled from "styled-components";
+import img from "../../assets/background.jpg";
 
 export const Info = styled.div`
   margin: 5% 25% 0 25%;
   text-align: center;
 
-  h3:hover{
-    color:green
+  h3:hover {
+    color: green;
   }
 
-  text:hover{
+  text:hover {
     font-weight: bold;
   }
 `;
@@ -44,11 +44,11 @@ export const FormGroup = styled.div`
     margin-right: 10px;
   }
 
-  .flag-icon:hover{
+  .flag-icon:hover {
     opacity: 0.7;
   }
 
-  span:hover{
+  span:hover {
     font-weight: bold;
   }
 

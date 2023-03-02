@@ -5,7 +5,6 @@ import { fetchExchangeRate } from "../config/DataProvider";
 import information from "../assets/information.json";
 import { Info, FormGroup } from "./styles/ExchangeInterface.styled";
 
-
 export const ExchangeInterface = () => {
   const texts = information.texts;
   const [GBPValue, setGBPValue] = useState(0);
@@ -51,48 +50,47 @@ export const ExchangeInterface = () => {
 
   return (
     <>
-
       <FormGroup>
-      <div className="form-group">
-        <label>
-          {sendText}
+        <div className="form-group">
+          <label>
+            {sendText}
+            <br />
+            <img src={ukImage} alt="UK flag" className="flag-icon" id="uk" />
+            <input
+              type="text"
+              value={GBPValue}
+              onChange={handleGBPChange}
+              id="gbp"
+            />
+            <span id="first">{texts.gbp}</span>
+          </label>
           <br />
-          <img src={ukImage} alt="UK flag" className="flag-icon" id="uk" />
-          <input
-            type="text"
-            value={GBPValue}
-            onChange={handleGBPChange}
-            id="gbp"
-          />
-          <span id="first">{texts.gbp}</span>
-        </label>
-        <br />
-        <label>
-          {receiveText}
-          <img
-            src={polandImage}
-            alt="Poland flag"
-            className="flag-icon"
-            id="pl"
-          />
-          <input
-            type="text"
-            value={PLNValue}
-            onChange={handlePLNChange}
-            id="pln"
-          />
-          <span id="second">{texts.pln}</span>
-        </label>
-      </div>
+          <label>
+            {receiveText}
+            <img
+              src={polandImage}
+              alt="Poland flag"
+              className="flag-icon"
+              id="pl"
+            />
+            <input
+              type="text"
+              value={PLNValue}
+              onChange={handlePLNChange}
+              id="pln"
+            />
+            <span id="second">{texts.pln}</span>
+          </label>
+        </div>
       </FormGroup>
       <Info>
-      <div className="info">
-        <text>
-          {texts.equal} {rate.toFixed(2)} {texts.pln}
-        </text>
-        <br />
-        <h3>{texts.fee}</h3>
-      </div>
+        <div className="info">
+          <text>
+            {texts.equal} {rate.toFixed(2)} {texts.pln}
+          </text>
+          <br />
+          <h3>{texts.fee}</h3>
+        </div>
       </Info>
     </>
   );
