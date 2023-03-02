@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./ExchangeInterface.css";
 import ukImage from "../assets/uk.png";
 import polandImage from "../assets/poland.webp";
 import { fetchExchangeRate } from "../config/DataProvider";
 import information from "../assets/information.json";
+import { Info, FormGroup } from "./styles/ExchangeInterface.styled";
+
 
 export const ExchangeInterface = () => {
   const texts = information.texts;
@@ -50,6 +51,8 @@ export const ExchangeInterface = () => {
 
   return (
     <>
+
+      <FormGroup>
       <div className="form-group">
         <label>
           {sendText}
@@ -81,6 +84,8 @@ export const ExchangeInterface = () => {
           <span id="second">{texts.pln}</span>
         </label>
       </div>
+      </FormGroup>
+      <Info>
       <div className="info">
         <text>
           {texts.equal} {rate.toFixed(2)} {texts.pln}
@@ -88,6 +93,7 @@ export const ExchangeInterface = () => {
         <br />
         <h3>{texts.fee}</h3>
       </div>
+      </Info>
     </>
   );
 };

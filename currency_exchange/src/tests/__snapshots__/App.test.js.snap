@@ -3,65 +3,73 @@
 exports[`App matches snapshot 1`] = `
 Array [
   <div
-    className="form-group"
+    className="sc-gswNZR cPTamh"
   >
-    <label>
-      You send
+    <div
+      className="form-group"
+    >
+      <label>
+        You send
+        <br />
+        <img
+          alt="UK flag"
+          className="flag-icon"
+          id="uk"
+          src="uk.png"
+        />
+        <input
+          id="gbp"
+          onChange={[Function]}
+          type="text"
+          value={0}
+        />
+        <span
+          id="first"
+        >
+          GBP
+        </span>
+      </label>
       <br />
-      <img
-        alt="UK flag"
-        className="flag-icon"
-        id="uk"
-        src="uk.png"
-      />
-      <input
-        id="gbp"
-        onChange={[Function]}
-        type="text"
-        value={0}
-      />
-      <span
-        id="first"
-      >
-        GBP
-      </span>
-    </label>
-    <br />
-    <label>
-      They receive
-      <img
-        alt="Poland flag"
-        className="flag-icon"
-        id="pl"
-        src="poland.webp"
-      />
-      <input
-        id="pln"
-        onChange={[Function]}
-        type="text"
-        value={0}
-      />
-      <span
-        id="second"
-      >
-        PLN
-      </span>
-    </label>
+      <label>
+        They receive
+        <img
+          alt="Poland flag"
+          className="flag-icon"
+          id="pl"
+          src="poland.webp"
+        />
+        <input
+          id="pln"
+          onChange={[Function]}
+          type="text"
+          value={0}
+        />
+        <span
+          id="second"
+        >
+          PLN
+        </span>
+      </label>
+    </div>
   </div>,
   <div
-    className="info"
+    className="sc-bcXHqe jBetZZ"
   >
-    <text>
-      1 GBP = 
-       
-      0.00
-       
-      PLN
-    </text>
-    <br />
-    <h3>
-      No transfer fee
-    </h3>
+    <div
+      className="info"
+    >
+      <text>
+        1 GBP = 
+         
+        0.00
+         
+        PLN
+      </text>
+      <br />
+      <h3>
+        No transfer fee
+      </h3>
+    </div>
   </div>,
 ]
 `;
