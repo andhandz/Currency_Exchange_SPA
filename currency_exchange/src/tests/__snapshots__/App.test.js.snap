@@ -3,7 +3,7 @@
 exports[`App matches snapshot 1`] = `
 Array [
   <div
-    className="sc-gswNZR cPTamh"
+    className="sc-gswNZR hytKLt"
   >
     <div
       className="form-group"
@@ -53,7 +53,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bcXHqe jBetZZ"
+    className="sc-bcXHqe jNsMQC"
   >
     <div
       className="info"

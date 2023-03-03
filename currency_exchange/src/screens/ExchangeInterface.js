@@ -15,7 +15,7 @@ export const ExchangeInterface = () => {
   const [activeInput, setActiveInput] = useState("GBP");
 
   const handleGBPChange = (event) => {
-    if (event.target.value !== undefined) {
+    if (event.target.value) {
       setGBPValue(event.target.value);
       setPLNValue((event.target.value * rate.toFixed(2)).toFixed(2));
       setActiveInput("GBP");
@@ -23,7 +23,7 @@ export const ExchangeInterface = () => {
   };
 
   const handlePLNChange = (event) => {
-    if (event.target.value !== undefined) {
+    if (event.target.value) {
       setPLNValue(event.target.value);
       setGBPValue((event.target.value / rate.toFixed(2)).toFixed(2));
       setActiveInput("PLN");
@@ -46,7 +46,7 @@ export const ExchangeInterface = () => {
       setSendText(texts.receive);
       setReceiveText(texts.send);
     }
-  });
+  }, [activeInput, texts.send, texts.receive]);
 
   return (
     <>
